@@ -78,6 +78,49 @@ public class MainActivity extends AppCompatActivity {
         textView2.setText(operand1 + operator + operand2);
 
       // Your code here, to diplay correct and incorrect options on the buttons
+        int correctans=0;
+        int min=0,max=3;
+        correctButton=(int) Math.floor(Math.random() * (max - min+1) + min);
+        if(operator=="+")
+            correctans=operand1+operand2;
+        else if(operator=="*")
+            correctans=operand1*operand2;
+        else if(operator=="-")
+            correctans=operand1-operand2;
+        else if(operator=="/")
+            correctans=operand1/operand2;
+//        button1.setText(Integer.toString(correctans));
+//        button2.setText(Integer.toString(correctans+1));
+//        button3.setText(Integer.toString(correctans-3));
+//        button4.setText(Integer.toString(correctans+2));
+        if(correctButton==0)
+        {
+            button1.setText(Integer.toString(correctans));
+            button2.setText(Integer.toString(correctans+1));
+            button3.setText(Integer.toString(correctans-3));
+            button4.setText(Integer.toString(correctans+2));
+        }
+        else if(correctButton==1)
+        {
+            button1.setText(Integer.toString(correctans-1));
+            button2.setText(Integer.toString(correctans));
+            button3.setText(Integer.toString(correctans-3));
+            button4.setText(Integer.toString(correctans+2));
+        }
+        else if(correctButton==2)
+        {
+            button1.setText(Integer.toString(correctans-1));
+            button2.setText(Integer.toString(correctans-8));
+            button3.setText(Integer.toString(correctans));
+            button4.setText(Integer.toString(correctans+2));
+        }
+        else if(correctButton==3)
+        {
+            button1.setText(Integer.toString(correctans-1));
+            button2.setText(Integer.toString(correctans+7));
+            button3.setText(Integer.toString(correctans-3));
+            button4.setText(Integer.toString(correctans));
+        }
 
         if(matchCounter==3){    // if three matches are completed updatee the perfomrance in sharedpreferences
 
